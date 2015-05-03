@@ -1,0 +1,21 @@
+{
+  "name": "tap-to-tapson",
+  "version": "0.0.0",
+  "description": "Convert Test Anything Protocol to tapson",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-readme": "txm < readme.markdown"
+  },
+  "author": "Anko <an@cyan.io>",
+  "license": "ISC",
+  "devDependencies": {
+    "LiveScript": "^1.3.1",
+    "tests-ex-markdown": "^1.0.0"
+  },
+  "dependencies": {
+    "duplexer2": "0.0.2",
+    "tap-parser": "^1.1.0",
+    "through2": "^0.6.5"
+  }
+}
