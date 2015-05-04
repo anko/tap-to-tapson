@@ -36,7 +36,8 @@ are interpreted.
 A TAP plan given ahead of time becomes a set of tapson planned tests.  (The
 output is representative.  The `id`s are random but match the test results.)
 
-<!-- egh, don't know how to write a concise shell script to test that -->
+<!-- Egh, don't know how to write a concise shell script to test that, I'll
+leave it to the proper unit tests. -->
 
     TAP version 13
     1..3
