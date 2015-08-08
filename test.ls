@@ -31,6 +31,28 @@ test "plain ok tests" (t) ->
       '''
     t.end!
 
+test "comments become descriptions" (t) ->
+  t.plan 1
+
+  s = test-stream do
+    '''
+    TAP version 13
+    # test number one
+    ok 1
+    # test number two
+    ok 2
+    1..2
+    '''
+  s.pipe tap-to-tapson! .pipe concat (output) ->
+    t.equals do
+      output.to-string!
+      '''
+      {"ok":true,"description":"test number one"}
+      {"ok":true,"description":"test number two"}
+
+      '''
+    t.end!
+
 test "initially planned tests" (t) ->
   s = test-stream do
     '''
