@@ -5,7 +5,7 @@
 Reads [TAP 13][1].  Outputs tapson v1.0.0.
 
 Comments are interpreted as the description of the following tests, until the
-next comment.  Markers for "TODO", "skip" and "diag" are added to the
+next comment appears.  Markers for "TODO", "skip" and "diag" are added to the
 description field too.
 
 ## Examples
