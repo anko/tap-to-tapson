@@ -4,32 +4,37 @@
 
 Reads [TAP 13][1].
 
-Comments are interpreted as the description of the following tests, until the
-next comment appears.  Markers for "TODO", "skip" and "diag" are added to the
-description field too.
+Comments are interpreted as a "heading" for the expected value of the following
+tests, until the next comment appears.  Markers for "TODO", "skip" and "diag"
+are added to the description field too.
 
 ## Examples
 
 <!-- !test program lsc cli.ls | head -c -1 -->
 
-The description is put everywhere because tapson streams don't support comments
-or any other state that would let one line of description affect how the others
-are interpreted.
+Here's how comments work as "headings" for the `expected` property of tests;
 
 <!-- !test in simple example -->
 
     TAP version 13
+    ok 1 before any headings
     # Serious business
-    ok 1 should throw
-    ok 2
+    ok 2 should throw
     ok 3
-    1..3
+    ok 4
+    # Even more serious
+    ok 5
+    ok 6 what
+    1..6
 
 <!-- !test out simple example -->
 
+    {"ok":true,"expected":"before any headings"}
     {"ok":true,"expected":"Serious business: should throw"}
     {"ok":true,"expected":"Serious business"}
     {"ok":true,"expected":"Serious business"}
+    {"ok":true,"expected":"Even more serious"}
+    {"ok":true,"expected":"Even more serious: what"}
 
 * * *
 
