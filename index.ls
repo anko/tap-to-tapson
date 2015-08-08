@@ -42,12 +42,13 @@ module.exports = ->
       seen-assert := true
       { ok, id : number, name } = it
 
-      expected = ""
-      if last-comment
-        expected += that
-      if name
-        if expected is "" then expected := name
-        else expected += ": #name"
+      maybe = -> if it? then it else ""
+
+      expected = [
+        maybe last-comment
+        maybe (if last-comment and name then ": ")
+        maybe name
+      ].reduce (+), ""
 
       r = {}
         ..ok = ok
