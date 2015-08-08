@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "description": "Convert Test Anything Protocol to tapson",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
+    "prepublish": "lsc -c index.ls",
     "test": "lsc test.ls",
     "test-readme": "txm < readme.markdown"
   },
