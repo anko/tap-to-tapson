@@ -41,10 +41,17 @@ module.exports = ->
     ..on \assert ->
       seen-assert := true
       { ok, id : number, name } = it
+
+      expected = ""
+      if last-comment
+        expected += that
+      if name
+        if expected is "" then expected := name
+        else expected += ": #name"
+
       r = {}
         ..ok = ok
-        ..description = last-comment if last-comment
-        ..expected = name if name
+        ..expected = expected if expected
         ..id = number-to-id[number] if plan
       push-out r
 

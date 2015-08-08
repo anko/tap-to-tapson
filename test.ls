@@ -47,8 +47,8 @@ test "comments become descriptions" (t) ->
     t.equals do
       output.to-string!
       '''
-      {"ok":true,"description":"test number one"}
-      {"ok":true,"description":"test number two"}
+      {"ok":true,"expected":"test number one"}
+      {"ok":true,"expected":"test number two"}
 
       '''
     t.end!

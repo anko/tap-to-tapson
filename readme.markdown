@@ -27,9 +27,9 @@ are interpreted.
 
 <!-- !test out simple example -->
 
-    {"ok":true,"description":"Serious business","expected":"should throw"}
-    {"ok":true,"description":"Serious business"}
-    {"ok":true,"description":"Serious business"}
+    {"ok":true,"expected":"Serious business: should throw"}
+    {"ok":true,"expected":"Serious business"}
+    {"ok":true,"expected":"Serious business"}
 
 * * *
 
