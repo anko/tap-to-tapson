@@ -1,8 +1,13 @@
 # tap-to-tapson
 
+Reads [TAP 13][1], produces tapson as equivalently as possible.
+
     <tap-producer> | tap-to-tapson | <tapson-consumer>
 
-Reads [TAP 13][1], produces tapson as equivalently as possible.
+Also works as a node module, with streams:
+
+    var tapToTapson = require("tap-to-tapson")();
+    process.stdin.pipe(tapToTapson).pipe(process.stdout);
 
 ## Mapping examples
 
