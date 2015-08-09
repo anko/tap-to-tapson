@@ -2,6 +2,7 @@ through = require \through2
 duplex  = require \duplexer2
 parser  = require \tap-parser
 uuid    = require \uuid .v4
+stringify-to-yaml = require \js-yaml .dump
 
 module.exports = ->
 
@@ -40,7 +41,7 @@ module.exports = ->
 
     ..on \assert ->
       seen-assert := true
-      { ok, id : number, name, todo, skip } = it
+      { ok, id : number, name, todo, skip, diag } = it
 
       maybe = -> if it? then it else ""
 
@@ -52,7 +53,8 @@ module.exports = ->
 
       todo = if todo then "TODO: #todo"
       skip = if skip then "SKIP: #skip"
-      actual = if (todo || skip) then that
+      actual = if diag then stringify-to-yaml that
+        else if (todo || skip) then that
 
       r = {}
         ..ok = ok

@@ -73,6 +73,29 @@ test "SKIP and TODO become failing tests with reason" (t) ->
       '''
     t.end!
 
+test "YAML block goes in `actual`" (t) ->
+  t.plan 1
+
+  s = test-stream do
+    '''
+    TAP version 13
+    not ok 1 hello there
+      ---
+      message: "something"
+      data:
+        nested: 'hello'
+      ...
+    1..1
+    '''
+  s.pipe tap-to-tapson! .pipe concat (output) ->
+    t.equals do
+      '''
+      {"ok":false,"expected":"hello there","actual":"message: something\\ndata:\\n  nested: hello\\n"}
+
+      '''
+      output.to-string!
+    t.end!
+
 test "initially planned tests" (t) ->
   s = test-stream do
     '''

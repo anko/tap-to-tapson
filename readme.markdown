@@ -47,6 +47,30 @@ Tests marked "TODO" or "SKIP" fail with `actual`-property set to reason given.
     {"ok":false,"expected":"answer to life the universe and everything","actual":"TODO: not written yet"}
     {"ok":false,"expected":"database smoketest","actual":"SKIP: database not configured"}
 
+Any assert's YAML block goes in the `actual` property. ("TODO" and
+"SKIP"-directives are ignored here.)
+
+<!-- !test in yaml-block -->
+
+    TAP Version 13
+    not ok 1 Resolve address
+      ---
+      message: "Failed with error 'hostname peebles.example.com not found'"
+      severity: fail
+      data:
+        got:
+          hostname: 'peebles.example.com'
+          address: ~
+        expected:
+          hostname: 'peebles.example.com'
+          address: '85.193.201.85'
+      ...
+    1..1
+
+<!-- !test out yaml-block -->
+
+    {"ok":false,"expected":"Resolve address","actual":"message: \"Failed with error 'hostname peebles.example.com not found'\"\nseverity: fail\ndata:\n  got:\n    hostname: peebles.example.com\n    address: null\n  expected:\n    hostname: peebles.example.com\n    address: 85.193.201.85\n"}
+
 A TAP plan given ahead of time becomes a set of tapson planned tests.  (The
 output is representative.  The `id`s are random but match the test results.)
 
