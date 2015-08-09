@@ -2,7 +2,7 @@
 
     <tap-producer> | tap-to-tapson | <tapson-consumer>
 
-Reads [TAP 13][1], produces tapson as equivalent as possible.
+Reads [TAP 13][1], produces tapson as equivalently as possible.
 
 ## Mapping examples
 
