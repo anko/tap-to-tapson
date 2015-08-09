@@ -1,7 +1,7 @@
 #!/usr/bin/env lsc
 
 test          = require \tape
-tap-to-tapson = require \./index.ls
+tap-to-tapson = require \./index.js
 through       = require \through2
 concat        = require \concat-stream
 

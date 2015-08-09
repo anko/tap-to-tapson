@@ -6,7 +6,7 @@ Reads [TAP 13][1], produces tapson as equivalently as possible.
 
 ## Mapping examples
 
-<!-- !test program lsc cli.ls | head -c -1 -->
+<!-- !test program ./cli.js | head -c -1 -->
 
 Comments are interpreted as a "heading" for the `expected` properties of the
 following tests, until the next comment appears.

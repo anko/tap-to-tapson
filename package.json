@@ -4,12 +4,16 @@
   "description": "Convert Test Anything Protocol to tapson",
   "main": "index.js",
   "files": [
-    "index.js"
+    "index.js",
+    "cli.js"
   ],
+  "bin": {
+      "tap-to-tapson": "./cli.js"
+  },
   "scripts": {
-    "prepublish": "lsc -c index.ls",
-    "test": "lsc test.ls",
-    "test-readme": "txm < readme.markdown"
+    "prepublish": "make",
+    "test": "make test",
+    "test-readme": "make test-readme"
   },
   "author": "Anko <an@cyan.io>",
   "license": "ISC",
