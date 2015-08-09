@@ -2,17 +2,14 @@
 
     <tap-producer> | tap-to-tapson | <tapson-consumer>
 
-Reads [TAP 13][1].
+Reads [TAP 13][1], produces tapson as equivalent as possible.
 
-Comments are interpreted as a "heading" for the expected value of the following
-tests, until the next comment appears.  Markers for "TODO", "skip" and "diag"
-are added to the description field too.
-
-## Examples
+## Mapping examples
 
 <!-- !test program lsc cli.ls | head -c -1 -->
 
-Here's how comments work as "headings" for the `expected` property of tests;
+Comments are interpreted as a "heading" for the `expected` properties of the
+following tests, until the next comment appears.
 
 <!-- !test in simple example -->
 
@@ -35,8 +32,6 @@ Here's how comments work as "headings" for the `expected` property of tests;
     {"ok":true,"expected":"Serious business"}
     {"ok":true,"expected":"Even more serious"}
     {"ok":true,"expected":"Even more serious: what"}
-
-* * *
 
 A TAP plan given ahead of time becomes a set of tapson planned tests.  (The
 output is representative.  The `id`s are random but match the test results.)
