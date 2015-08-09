@@ -40,7 +40,7 @@ module.exports = ->
 
     ..on \assert ->
       seen-assert := true
-      { ok, id : number, name } = it
+      { ok, id : number, name, todo, skip } = it
 
       maybe = -> if it? then it else ""
 
@@ -50,10 +50,15 @@ module.exports = ->
         maybe name
       ].reduce (+), ""
 
+      todo = if todo then "TODO: #todo"
+      skip = if skip then "SKIP: #skip"
+      actual = if (todo || skip) then that
+
       r = {}
         ..ok = ok
         ..expected = expected if expected
         ..id = number-to-id[number] if plan
+        ..actual = actual if actual
       push-out r
 
   return duplex tap, out

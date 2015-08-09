@@ -53,6 +53,26 @@ test "comments become descriptions" (t) ->
       '''
     t.end!
 
+test "SKIP and TODO become failing tests with reason" (t) ->
+  t.plan 1
+
+  s = test-stream do
+    '''
+    TAP version 13
+    not ok 1 one # TODO fail
+    not ok 2 two # SKIP fail too
+    1..2
+    '''
+  s.pipe tap-to-tapson! .pipe concat (output) ->
+    t.equals do
+      output.to-string!
+      '''
+      {"ok":false,"expected":"one","actual":"TODO: fail"}
+      {"ok":false,"expected":"two","actual":"SKIP: fail too"}
+
+      '''
+    t.end!
+
 test "initially planned tests" (t) ->
   s = test-stream do
     '''

@@ -33,6 +33,20 @@ following tests, until the next comment appears.
     {"ok":true,"expected":"Even more serious"}
     {"ok":true,"expected":"Even more serious: what"}
 
+Tests marked "TODO" or "SKIP" fail with `actual`-property set to reason given.
+
+<!-- !test in todo-skip -->
+
+    TAP version 13
+    not ok 1 answer to life the universe and everything # TODO not written yet
+    not ok 2 database smoketest # SKIP database not configured
+    1..2
+
+<!-- !test out todo-skip -->
+
+    {"ok":false,"expected":"answer to life the universe and everything","actual":"TODO: not written yet"}
+    {"ok":false,"expected":"database smoketest","actual":"SKIP: database not configured"}
+
 A TAP plan given ahead of time becomes a set of tapson planned tests.  (The
 output is representative.  The `id`s are random but match the test results.)
 
