@@ -1,6 +1,6 @@
-# tap-to-tapson
+# tap-to-tapson [![](https://img.shields.io/travis/anko/tap-to-tapson.svg?style=flat-square)][1]
 
-Reads [TAP 13][1], produces [tapson][2] (v1.0.x) as equivalent as possible.
+Reads [TAP 13][2], produces [tapson][3] (v1.0.x) as equivalent as possible.
 
     <tap-producer> | tap-to-tapson | <tapson-consumer>
 
@@ -97,5 +97,6 @@ leave it to the proper unit tests. -->
     {"id":"314cf30f5c39abb4798bbbf30327be092bd765bc","ok":true}
     {"id":"a010bf964ecb2709bd1c996630c65b28dff1e99d","ok":true}
 
-[1]: https://testanything.org/tap-version-13-specification.html
-[2]: https://github.com/anko/tapson
+[1]: https://travis-ci.org/anko/tap-to-tapson
+[2]: https://testanything.org/tap-version-13-specification.html
+[3]: https://github.com/anko/tapson
