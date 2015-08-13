@@ -1,6 +1,6 @@
 {
   "name": "tap-to-tapson",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Convert Test Anything Protocol to tapson",
   "main": "index.js",
   "files": [
@@ -8,7 +8,7 @@
     "cli.js"
   ],
   "bin": {
-      "tap-to-tapson": "./cli.js"
+    "tap-to-tapson": "./cli.js"
   },
   "scripts": {
     "prepublish": "make",
