@@ -1,6 +1,6 @@
 # tap-to-tapson
 
-Reads [TAP 13][1], produces tapson as equivalently as possible.
+Reads [TAP 13][1], produces [tapson][2] (v1.0.x) as equivalent as possible.
 
     <tap-producer> | tap-to-tapson | <tapson-consumer>
 
@@ -98,3 +98,4 @@ leave it to the proper unit tests. -->
     {"id":"a010bf964ecb2709bd1c996630c65b28dff1e99d","ok":true}
 
 [1]: https://testanything.org/tap-version-13-specification.html
+[2]: https://github.com/anko/tapson
